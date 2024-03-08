@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "APP_ENV=local node --watch app.js"
+    "start": "node --watch app.js"
   },
   "author": "",
   "license": "ISC",

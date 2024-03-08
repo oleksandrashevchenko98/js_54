@@ -44,3 +44,18 @@ try {
 } catch (err) {
     logger('Error', err.name);
 }
+
+let sigintCount = 0;
+process.on("SIGINT", () => {
+    sigintCount++;
+    console.log(`Just Received SIGINT.`);
+    if (sigintCount >= 2) {
+        console.log('Exiting the process...');
+        setTimeout(() => {
+            sigintCount = 0;
+            console.log('Resetting SIGINT count.');
+        }, 3000);
+        process.exit(0);
+    }
+});
+setInterval(() => { }, 2000);
